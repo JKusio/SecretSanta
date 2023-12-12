@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
-export default function Home() {
+export default function Wishes() {
   const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = (event: any) => {
@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen w-full bg-gradient-to-r from-red-600 via-red-600 to-red-800">
+    <main className="min-h-screen w-full bg-gradient-to-r from-red-600 via-red-600 to-red-700">
       <audio className="hidden" muted autoPlay loop>
         <source src="/audio/jingle-bells.mp3" type="audio/mpeg" />
       </audio>
