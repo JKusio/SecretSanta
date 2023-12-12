@@ -22,7 +22,7 @@ export default function Home() {
   });
 
   const onSecretCodeSubmit = () => {
-    alert(inputValue);
+    alert('Nie ma takiego kodu');
   };
 
   return (
@@ -32,7 +32,7 @@ export default function Home() {
       </audio>
       <div className="flex flex-col items-center justify-center min-h-screen">
         <Image src="/image/logo.png" alt="Logo" width={1000} height={200} />
-        <span className="text-white text-[64px]"> Enter your secret code </span>
+        <span className="text-white text-[64px]"> Wpisz swój tajny kod </span>
         <input
           className="text-center text-[64px] bg-transparent border-b-2 border-white focus:outline-none text-white"
           type="text"
@@ -43,7 +43,7 @@ export default function Home() {
           className="mt-10 bg-white text-red-600 text-[48px] px-10 py-5 rounded-full"
           onClick={onSecretCodeSubmit}
         >
-          Submit
+          Dalej
         </button>
       </div>
     </main>
