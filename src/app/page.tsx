@@ -1,10 +1,13 @@
 'use client';
 
+import { signIn } from 'next-auth/react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
 export default function Home() {
   const [inputValue, setInputValue] = useState('');
+  const router = useRouter();
 
   const handleInputChange = (event: any) => {
     setInputValue(event.target.value);
@@ -21,8 +24,17 @@ export default function Home() {
     });
   });
 
-  const onSecretCodeSubmit = () => {
-    alert('Nie ma takiego kodu');
+  const onSecretCodeSubmit = async () => {
+    const result = await signIn('credentials', {
+      redirect: false,
+      code: inputValue,
+    });
+
+    if (result && !result.error) {
+      router.push('/wishes');
+    } else {
+      alert('Nieprawidłowy kod');
+    }
   };
 
   return (
