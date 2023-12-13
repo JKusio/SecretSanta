@@ -14,7 +14,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    document.body.addEventListener('mousemove', function () {
+    document.body.addEventListener('mousedown', function () {
       const audioElement = document.querySelector('audio');
 
       if (audioElement) {
