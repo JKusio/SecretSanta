@@ -62,21 +62,23 @@ export default function Wishes() {
         buttonRef.current?.classList.add('absolute');
       }
 
-      const xdDoc = document.querySelector('#xd');
+      if (xdDocRef.current && buttonRef.current) {
+        const xdDocHeight = xdDocRef.current.offsetHeight;
+        const xdDocWidth = xdDocRef.current.offsetWidth;
 
-      const xdDocHeight = xdDocRef.current.offsetHeight;
-      const xdDocWidth = xdDocRef.current.offsetWidth;
+        const randomTop = Math.floor(
+          Math.random() * (xdDocHeight - buttonRef.current.offsetHeight),
+        );
+        const randomLeft = Math.floor(Math.random() * (xdDocWidth - buttonRef.current.offsetWidth));
 
-      const randomTop = Math.floor(Math.random() * (xdDocHeight - buttonRef.current.offsetHeight));
-      const randomLeft = Math.floor(Math.random() * (xdDocWidth - buttonRef.current.offsetWidth));
+        buttonRef.current.style.top = `${randomTop}px`;
+        buttonRef.current.style.left = `${randomLeft}px`;
 
-      buttonRef.current.style.top = `${randomTop}px`;
-      buttonRef.current.style.left = `${randomLeft}px`;
+        setCounter(counter + 1);
 
-      setCounter(counter + 1);
-
-      if (counter > 5) {
-        buttonRef.current.classList.add('hidden');
+        if (counter > 5) {
+          buttonRef.current.classList.add('hidden');
+        }
       }
     }
   };
@@ -152,7 +154,7 @@ export default function Wishes() {
               <div className="slide">
                 <span> Na koniec pytanie </span>
                 <span> Czy jesteś zadowolony z prezentu? </span>
-                <span className="small"> Spróbuj kliknąć "nie" 👀 </span>
+                <span className="small"> Spróbuj kliknąć &quot;nie&quot; 👀 </span>
                 <div className="flex gap-[64px]">
                   <button
                     onClick={handleYesButtonClick}
