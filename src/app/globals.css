@@ -3,7 +3,24 @@
 @tailwind utilities;
 
 .wishes-slide {
-  @apply w-full h-full bg-white;
+  @apply w-full h-full font-sans text-[64px] text-white;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+
+  img {
+    @apply mt-8;
+  }
+
+  span {
+    @apply mt-8;
+  }
+
+  .small {
+    @apply text-[32px];
+  }
+}
+
+.slide {
+  @apply w-full h-full flex flex-col justify-center items-center;
 }
 
 .winter-is-coming,
