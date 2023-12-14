@@ -16,7 +16,7 @@ export default function Wishes() {
     setSwiper(
       new Swiper('.swiper', {
         autoplay: {
-          delay: 375,
+          delay: 4250,
           stopOnLastSlide: true,
         },
         modules: [Autoplay],
